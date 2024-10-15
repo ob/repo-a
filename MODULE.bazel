@@ -9,7 +9,7 @@ bazel_dep(name = "base", version = "0.0.1")
 git_override(
     module_name = "base",
     remote = "git@github.com:ob/base.git",
-    commit = "02d4d59",
+    commit = "f3efca9feb062ff4fd4fc9925d3f3b0feda0c263",
 )
 
 # Macrorepos
