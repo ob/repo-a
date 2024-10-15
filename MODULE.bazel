@@ -1,0 +1,32 @@
+""" Module definition for repo-a """
+
+module(
+    name = "repo-a",
+    version = "1.0.0",
+)
+
+bazel_dep(name = "base", version = "0.0.1")
+git_override(
+    module_name = "base",
+    remote = "",
+    commit = "",
+)
+
+# Macrorepos
+# bazel_dep(name = "macrorepos", version = "0.0.1")
+# git_override(
+#     module_name = "macrorepos",
+#     remote = "",
+#     commit = "",
+# )
+
+# macrorepos = use_extension("@macrorepos//:extensions.bzl", "macrorepos")
+# macrorepos.install(
+#     deps = {
+#         # "base": "",
+#         "base": "",
+#     }
+# )
+
+# use_repo(macrorepos, "base")
+

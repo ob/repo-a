@@ -1,0 +1,6 @@
+java_binary(
+    name = "hello",
+    srcs = glob(["*.java"]),
+    main_class = "com.company.hello.SayHello",
+    deps = ["//src/main/java/com/company/salutations"],
+)

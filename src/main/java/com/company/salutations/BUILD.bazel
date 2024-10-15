@@ -1,0 +1,11 @@
+java_library(
+    name = "salutations",
+    srcs = glob(["*.java"]),
+    data = [],
+    visibility = [
+        "//src/main/java/com/company/hello:__pkg__",
+    ],
+    deps = [
+        "@base//:greeter",
+    ],
+)
