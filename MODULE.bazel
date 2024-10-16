@@ -5,28 +5,27 @@ module(
     version = "1.0.0",
 )
 
-bazel_dep(name = "base", version = "0.0.1")
-git_override(
-    module_name = "base",
-    remote = "git@github.com:ob/base.git",
-    commit = "f3efca9feb062ff4fd4fc9925d3f3b0feda0c263",
-)
+#bazel_dep(name = "base", version = "0.0.1")
+#git_override(
+#    module_name = "base",
+#    remote = "git@github.com:ob/base.git",
+#    commit = "f3efca9feb062ff4fd4fc9925d3f3b0feda0c263",
+#)
 
 # Macrorepos
-# bazel_dep(name = "macrorepos", version = "0.0.1")
-# git_override(
-#     module_name = "macrorepos",
-#     remote = "",
-#     commit = "",
-# )
+bazel_dep(name = "macrorepos", version = "0.0.1")
+git_override(
+    module_name = "macrorepos",
+    remote = "git@github.com:ob/macrorepos.git",
+    commit = "c7d3dc0eca7fa7c7c5185e6f519619b7b52df587",
+)
 
-# macrorepos = use_extension("@macrorepos//:extensions.bzl", "macrorepos")
-# macrorepos.install(
-#     deps = {
-#         # "base": "",
-#         "base": "",
-#     }
-# )
+macrorepos = use_extension("@macrorepos//:extensions.bzl", "macrorepos")
+macrorepos.install(
+    deps = {
+        "base": "f3efca9feb062ff4fd4fc9925d3f3b0feda0c263",
+    }
+)
 
-# use_repo(macrorepos, "base")
+use_repo(macrorepos, "base")
 
